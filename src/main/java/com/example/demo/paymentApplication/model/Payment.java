@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-@Table(name = "Alti_Payments")
+@Table(name = "PAYMENT_APPLICATION")
 public class Payment {
 
     @Id
