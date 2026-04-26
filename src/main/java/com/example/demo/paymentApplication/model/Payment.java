@@ -16,7 +16,7 @@ public class Payment {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer paymetId;
     private String transactionId;
-    private String paymetStatus;
+    private String paymentStatus;
 
     private Integer orderId; // comes from order servide
     private Double amount; // comes from orders service
