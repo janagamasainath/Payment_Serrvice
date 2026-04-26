@@ -1,4 +1,4 @@
-package com.example.demo.OrderApplicatiojApplication;
+package com.example.demo.paymentApplication;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -7,9 +7,9 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.web.client.RestTemplate;
 
 @SpringBootApplication
-public class OrderServiceApplication {
+public class PaymentServiceApplication {
     public static void main(String[] args) {
-       SpringApplication.run(OrderServiceApplication.class, args);
+       SpringApplication.run(PaymentServiceApplication.class, args);
 
     }
     @Bean

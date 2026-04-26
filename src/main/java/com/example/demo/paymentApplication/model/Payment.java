@@ -1,19 +1,20 @@
-package com.example.demo.OrderApplicatiojApplication.common;
+package com.example.demo.paymentApplication.model;
 
-
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-
+@Entity
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-
+@Table(name = "Alti_Payments")
 public class Payment {
 
-
-    private Integer payment_Id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Integer paymetId;
     private String transactionId;
     private String paymetStatus;
 
