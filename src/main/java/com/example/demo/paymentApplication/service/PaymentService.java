@@ -18,11 +18,12 @@ public class PaymentService {
 
     public Payment doPayment(Payment payment) {
         payment.setTransactionId(UUID.randomUUID().toString());
-        payment.setPaymetStatus(paymentStatus());
+        payment.setPaymentStatus(paymentStatus());
        return paymentRepo.save(payment);
     }
 
     public String paymentStatus(){
+
         return new Random().nextBoolean() ? "Success" : "Failure";
     }
 
@@ -32,5 +33,15 @@ public class PaymentService {
 
     public List<Payment> findallPayemantHistory() {
         return paymentRepo.findAll();
+    }
+
+    public Payment getByTransactionId(String transactionId){
+        Payment byTransactionId = paymentRepo.getByTransactionId(transactionId);
+        return byTransactionId;
+    }
+
+    public List<Payment> statusReport(String status){
+        List<Payment> payments = paymentRepo.statusReport(status);
+        return payments;
     }
 }
