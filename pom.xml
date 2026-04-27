@@ -8,10 +8,10 @@
 		<version>3.2.5</version>
 	</parent>
 	<groupId>com.example</groupId>
-	<artifactId>Order_applicatioj</artifactId>
+	<artifactId>Payment_application</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>Order_applicatioj</name>
-	<description>Order_applicatioj</description>
+	<name>Payment_application</name>
+	<description>Payment_application</description>
 	<url/>
 	<licenses>
 		<license/>
@@ -46,6 +46,11 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-config</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
