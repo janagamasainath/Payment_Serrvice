@@ -3,7 +3,9 @@ package com.example.demo.paymentApplication.service;
 
 import com.example.demo.paymentApplication.model.Payment;
 import com.example.demo.paymentApplication.repo.PaymentRepo;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -43,5 +45,17 @@ public class PaymentService {
     public List<Payment> statusReport(String status){
         List<Payment> payments = paymentRepo.statusReport(status);
         return payments;
+    }
+
+    @KafkaListener(topics = "order-topic", groupId = "payment-group")
+    public void consume(Payment event) {
+        System.out.println("Received Order: " + event);
+
+        // Simulate payment processing
+        if (event.getPaymentStatus().equals("Success")) {
+            System.out.println("Payment SUCCESS for Order: " + event.getOrderId());
+        } else {
+            System.out.println("Payment FAILED");
+        }
     }
 }
