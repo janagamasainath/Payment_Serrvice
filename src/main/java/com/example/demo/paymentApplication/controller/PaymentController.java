@@ -29,12 +29,12 @@ public class PaymentController {
         return paymentService.findallPayemantHistory();
     }
 
-    @GetMapping("/{transactionId}")
+    /*@GetMapping("/{transactionId}")
     public Payment getByTransactionId(@PathVariable String transactionId){
         Payment byTransactionId = paymentService.getByTransactionId(transactionId);
         return byTransactionId;
 
-    }
+    }*/
 
     @GetMapping("status/{paymentStatus}")
     public List<Payment> statusReport(@PathVariable String paymentStatus) {
